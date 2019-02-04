@@ -54,7 +54,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(160, 387);
+            this.button1.Location = new System.Drawing.Point(159, 385);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(202, 40);
             this.button1.TabIndex = 1;
@@ -159,7 +159,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(652, 449);
+            this.ClientSize = new System.Drawing.Size(610, 462);
             this.Controls.Add(this.combotipcuenta);
             this.Controls.Add(this.txtbanco);
             this.Controls.Add(this.txttelefono);

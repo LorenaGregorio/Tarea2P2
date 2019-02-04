@@ -1,5 +1,6 @@
 ﻿using EncapsularUDEO.Class;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,65 +19,59 @@ namespace EncapsularUDEO
         {
             InitializeComponent();
 
-            //instancia == creación de objeto en memoria
-            var MiAlumno = new Alumno();
-
-
-            var cuenta = new Cuenta();
-            List<Cuenta> listaCuenta = new List<Cuenta>();
-                    listaCuenta.Add(cuenta);
-            //creando una fuente de llenado para el dataGridView
-            BindingSource bs = new BindingSource();
-            bs.DataSource = listaCuenta;
-            dataGridView1.DataSource = bs;
 
         }
+
+        //lista creada
+        List<Cuenta> listacuenta = new List<Cuenta>();
+
 
         private void button1_Click(object sender, EventArgs e)
         {
+          
+      
+        
+            //se crea un obejto llamado cuenta1}
+            // de la clase Cuenta
+            Cuenta cuenta1 = new Cuenta
+            (
+                 txtnombre.Text,
+                 txtdireccion.Text,
+                 txttelefono.Text,
+                 combotipcuenta.Text,
+                 txtbanco.Text
+            );
+            //a la lista creada arriba,se le agregaran los datos que sean 
+            //ingresadosen objeto cuenta1
+            listacuenta.Add(cuenta1);
 
-            List<Cuenta> listaCuenta = new List<Cuenta>();
-
-            //Agregamos la cuenta la lista
-            var cuenta = new Cuenta();
-
-            //llenando los datos para el get y set
-            //cuenta.Nombre = txtnombre.Text;
-            //cuenta.Direccion = txtdireccion.Text;
-            //cuenta.Telefono = txttelefono.Text;
-            //cuenta.TipodeCuenta = combotipcuenta.Text;
-            //cuenta.Banco = txtbanco.Text;
-
-            listaCuenta.Add(new Cuenta()
-            {
-                Nombre = txtnombre.Text,
-                Direccion = txtdireccion.Text,
-                Telefono = txttelefono.Text,
-                TipodeCuenta = combotipcuenta.Text,
-                Banco = txtbanco.Text
-            });
-
-
-
-           
-            //listaCuenta.Add(cuenta);
+            //se restea el dataGridView1 o la pantalla
+            dataGridView1.DataSource = null;
+            //se muestra en el dataGridView1 los datos que tenga la lista
+            dataGridView1.DataSource = listacuenta;
+            //llama al metodo borrar
+            borrar();
          
-
-            //creando una fuente de llenado para el dataGridView
-            BindingSource bs = new BindingSource();
-            bs.DataSource = listaCuenta;
-            dataGridView1.DataSource = bs;
-       
-
-
+          
         }
 
+        // se creo el metodo borrar
+        public void borrar()
+        {
+            txtbanco.Clear();
+            txtdireccion.Clear();
+            txtnombre.Clear();
+            txttelefono.Clear();
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             
         }
-               
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+         
             
-        
+        }
     }
 }

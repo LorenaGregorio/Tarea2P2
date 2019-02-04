@@ -14,15 +14,18 @@ namespace EncapsularUDEO.Class
         private string telefono;
         private string tipodecuenta;
         private string banco;
+     
 
-        //public Cuenta(string nombre, string direccion, string telefono, string tipodeCuenta, string banco)
-        //{
-        //    this.nombre = nombre;
-        //    this.direccion = direccion;
-        //    this.telefono = telefono;
-        //    tipodecuenta = tipodeCuenta;
-        //    this.banco = banco;
-        //}
+  
+
+        public Cuenta(string nombre, string direccion, string telefono, string tipodeCuenta, string banco)
+        {
+            this.nombre = nombre;
+            this.direccion = direccion;
+            this.telefono = telefono;
+            this.tipodecuenta = tipodeCuenta;
+            this.banco = banco;
+        }
 
 
 
